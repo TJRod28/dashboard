@@ -20,4 +20,45 @@ function displayWeatherError() {
     document.getElementById('weather-display').innerHTML =
     `<p class="widget-error">Weather data is unavailable right now.</p>`;
 }
+
+let allQuotes = [];
+const quoteButton = document.getElementById('new-quote-btn');
+
+function displayRandomQuote() {
+    const display = document.getElementById('quotes-display');
+    if (allQuotes.length === 0) {
+        display.innerHTML = `<p class="widget-error">No quotes to show.</p>`;
+        return;
+    }
+    const randomIndex = Math.floor(Math.random() * allQuotes.length);
+    const quote = allQuotes[randomIndex];
+    display.innerHTML = `
+    <div class="quote-card">
+    <div class="quote-text">"${quote.text}"</div>
+    <div class="quote-source">-${quote.source}</div>
+    </div>`;
+}
+
+function loadQuotes() {
+    fetch('./data/quotes.json')
+    .then(response => response.json())
+    .then(quotes => {
+        allQuotes = quotes;
+        displayRandomQuote();
+        if (allQuotes.length > 0) {
+            quoteButton.disabled = false;
+        }
+    })
+    .catch(error => {
+        console.error('Error loading quotes:', error);
+        displayQuotesError();
+    });
+}
+
+function displayQuotesError() {
+    document.getElementById('quotes-display').innerHTML =
+    '<p class="widget-error">Quotes data is unavailable right now.</p>';
+}
+
 loadWeather();
+loadQuotes();
