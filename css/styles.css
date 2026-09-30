@@ -166,6 +166,11 @@ button {
     margin-bottom: var(--space-xl);
 }
 
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
    /* ==========================
    9. SEARCH
    ========================== */
