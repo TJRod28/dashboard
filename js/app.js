@@ -22,6 +22,7 @@ function displayWeatherError() {
 }
 
 let allQuotes = [];
+let currentQuoteIndex = -1;
 const quoteButton = document.getElementById('new-quote-btn');
 
 function displayRandomQuote() {
@@ -30,7 +31,11 @@ function displayRandomQuote() {
         display.innerHTML = `<p class="widget-error">No quotes to show.</p>`;
         return;
     }
-    const randomIndex = Math.floor(Math.random() * allQuotes.length);
+    let randomIndex;
+    do {
+        randomIndex = Math.floor(Math.random() * allQuotes.length);
+    } while (randomIndex === currentQuoteIndex && allQuotes.length > 1);
+    currentQuoteIndex = randomIndex;
     const quote = allQuotes[randomIndex];
     display.innerHTML = `
     <div class="quote-card">
@@ -59,6 +64,8 @@ function displayQuotesError() {
     document.getElementById('quotes-display').innerHTML =
     '<p class="widget-error">Quotes data is unavailable right now.</p>';
 }
+
+quoteButton.addEventListener('click', displayRandomQuote);
 
 loadWeather();
 loadQuotes();
