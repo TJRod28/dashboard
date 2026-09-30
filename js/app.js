@@ -21,20 +21,3 @@ function displayWeatherError() {
     `<p class="widget-error">Weather data is unavailable right now.</p>`;
 }
 loadWeather();
-
-
-
-function displayWeather(weather) {
-    document.getElementById('weather-display').innerHTML = `
-        <div class="weather-current">
-            <div class="weather-icon">${weather.icon}</div>
-            <div class="weather-temp">${weather.temperature}°F</div>
-            <div class="weather-location">${weather.location}</div>
-            <div class="weather-condition">${weather.condition}</div>
-        </div>`;
-}
-function displayWeatherError() {
-    document.getElementById('weather-display').innerHTML =
-        `<p class="widget-error">Weather data is unavailable right now.</p>`;
-}
-loadWeather();
