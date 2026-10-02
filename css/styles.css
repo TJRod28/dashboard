@@ -59,6 +59,19 @@ img {
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+body.theme-dark {
+    --color-bg: #141a26;
+    --color-surface: #1f2937;
+    --color-surface-alt: #273142;
+    --color-text: #f7fafc;
+    --color-muted: #a9b4c4;
+    --color-border: #2c3648;
+    --color-accent: #c9a9f0;
+    --color-accent-strong: #e2d1f7;
+    --color-danger: #f97066;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,.3);
+}
+
 /* ==========================
    3. BASE ELEMENT STYLES
    ========================== */
@@ -162,39 +175,13 @@ button {
     color: var(--color-surface);
 }
 
-.clear-all-container {
-    margin-bottom: var(--space-xl);
-}
-
-button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
    /* ==========================
    9. SEARCH
    ========================== */
-   /* Adding this line of code here in the Search category since it calls back to the search in my favorites.List */
-   /* Additional code from Optional Enhancements for Project 2. This creates a favorites count display. */
-   .favorites-count {
-    color: var(--color-text);
-    font-size: var(--text-h3);
-    font-weight: 600;
-    margin-bottom: var(--space-md);
-}
-
+   
    /* ==========================
    10. CARDS
    ========================== */
-.favorites-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
-}
-
-.empty-message {
-    grid-column: 1 / -1;
-}
 
 .widget {
       padding: var(--space-lg);
