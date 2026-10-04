@@ -2,7 +2,7 @@
 
 A dashboard that serves as a demonstration of my emerging abilities in JSON properties. This is also project 3 for the WRIT 40363 Fall 2026 class.
 
-**Live site:** https://tjrod28.github.io/portfolio-tjrodriguez/
+**Live site:** https://tjrod28.github.io/dashboard/
 
 ## Built with
 
