@@ -211,7 +211,15 @@ input:focus-visible {
    10. CARDS
    ========================== */
 
-.widget {
+   /* These widgets were remolded from portfolio Project 1 to fit Project 3 based on Dr. Rode's suggestions */
+.widget-grid {
+       display: grid;
+       grid-template-columns: 1fr;
+       gap: var(--space-lg);
+   }
+   .widget-grid .widget { margin-bottom: 0; }
+
+   .widget {
       padding: var(--space-lg);
       background-color: var(--color-surface);
       border: 1px solid var(--color-border);
@@ -223,7 +231,7 @@ input:focus-visible {
    }
    .widget:hover {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-    transform: translate(-2px);
+    transform: translateY(-2px);
 }
 @keyframes fade-in {
     from { opacity: 0; transform: translateY(8px); }
@@ -237,10 +245,10 @@ input:focus-visible {
    /* ==========================
    12. RESPONSIVE
    ========================== */
+   /* This media response was remolded from portfolio Project 1 to fit Project 3 based on Dr. Rode's suggestions */
 @media (min-width: 768px) {
-    .favorites-grid {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    }
+    .widget-grid { grid-template-columns: 1fr 1fr; }
+    .widget.featured { grid-column: span 2; }
 }
 
 @media (prefers-reduced-motion: reduce) {
