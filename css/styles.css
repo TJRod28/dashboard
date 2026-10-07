@@ -125,7 +125,7 @@ body.theme-dark {
 /* ==========================
    5. HEADER 
    ========================== */
-.skip-link {
+/*Commented out due to not being needed for Project 3 but rather a learning process .skip-link {
     position: absolute;
     top: -40px;
     left: 0;
@@ -133,7 +133,7 @@ body.theme-dark {
     color: var(--color-surface);
     padding: 8px 16px;
 }
-.skip-link:focus { top: 0; }
+.skip-link:focus { top: 0; } */
 
    /* ==========================
    6. SECTIONS
@@ -196,11 +196,12 @@ button {
     to { transform: rotate(360deg); }
 }
 
-button:focus-visible,
+/*Commented out due to Project 3 not truly needed but rather a learning process */
+/*button:focus-visible,
 input:focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
-}
+} */
 
    /* ==========================
    9. SEARCH
